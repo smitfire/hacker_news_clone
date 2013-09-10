@@ -1,0 +1,20 @@
+<section class="post">
+  <h5><%=@post.user.name.capitalize  %></h5>
+  <h3>Post:
+    <%=@post.title.capitalize  %>
+  </h3>
+  <hr>
+  <p>
+    <%=@post.content.capitalize  %>
+  </p>
+  <hr>
+  <div class="comments">
+    <ul>
+      <% @comments.each do |comment| %>
+        <li><h4><%= comment.title.capitalize %></h4></li>
+        <li><h5><%= comment.user.name.capitalize %></h5></li><hr>
+        <li><p><%= comment.content.capitalize %></p></li>
+      <% end %>
+    </ul>
+  </div>
+</section>

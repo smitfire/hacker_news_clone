@@ -1,0 +1,158 @@
+*{
+  padding:0; margin: 0;
+  border-radius: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+input{
+  border-radius: 0;
+}
+.container {
+  margin: 0px auto;
+  width: 100%;
+}
+
+nav{
+  padding: 10px 0;
+  width: 100%;
+  background:rgba(20,100,200,0.7);
+  text-align: right;
+  /*height:70px;*/
+}
+nav > ul{
+  margin: 0 50px 0 0;
+}
+nav > ul > li{
+  display: inline-block;
+  margin:0 20px;
+  border-radius: 0;
+}
+nav > ul > li.left{
+  float:left;
+  margin-left: 50px;
+}
+nav > ul > li > a{
+  text-decoration: none;
+  color: white;
+  border-radius: 0;
+}
+nav > ul > li > form > input {
+  border:none;
+  padding: 5px 15px;
+  background:rgba(240,240,240,0.9);
+}
+
+.container > section.home > ol > ul > li > h2> a{
+
+}
+hr{
+  width:100%;
+}
+.container > section.home{
+  width:1000px;
+  margin: 40px auto;
+  text-align: left;
+}
+.container > section.home h2 {
+  font-weight: 100;
+  display: inline;
+}
+
+.container > section.post > div > ul,
+.container > section.home > ol > ul {
+  padding: 10px 10px 20px;
+  list-style: none;
+}
+
+.container > section.home > ol > ul > li > h2> a,
+.container > section.home > ol > ul > a > li,
+.container > section.home > ol > ul > li{
+  display: inline;
+  padding: 10px;
+  width:auto;
+  margin: 5px auto;
+}
+
+
+
+.container > section.home > ol > ul > a > li{
+  display: inline-block;
+  padding: 10px 60px;
+}
+
+
+.container > section.post > p,
+.container > section.home >ol > ul > li > p{
+  width:60%;
+  }
+
+.container > section.home > ol > ul > li > h2> a{
+  float: left;
+}
+
+.container > section.home > ol > ul > li > a,
+.container > section.home > ol > ul > a{
+  text-decoration: none;
+  color:rgba(254,254,254,1);
+}
+
+
+.container > section.post > h5,
+.container > section.home > ol > ul > li > a{
+  float: right;
+  padding: 10px 60px;
+}
+
+.container > section.post h5,
+.container > section.post h3,
+.container > section.home > ol > ul > li > a,
+.container > section.home > ol > ul > a > li{
+  color: rgba(20,100,200,0.6);
+  background: rgba(220,220,220,0.7);
+}
+.container > section.home > ol > ul > a:hover > li{
+
+}
+
+.container > section.post{
+  width: 700px;
+  margin: 40px auto;
+}
+
+.container > section.post h3{
+  padding: 6px 60px 6px 0;
+  width: 40%;
+}
+
+.container > section.post > h3,
+.container > section.post > h5,
+.container > section.post > p{
+  margin: 0 0 10px;
+}
+
+.container > section.post > p,
+.container > section.post > div{
+  margin: 20px;
+}
+
+.container > section.post > div > ul > li {
+  margin: 15px 0 0;
+}
+.container > section.post > div > ul > li >h4{
+  color: rgba(20,100,200,1);
+  float: left;
+  /*padding: 5px 30px;*/
+}
+.container > section.post > div > ul > li >h5{
+  float: right;
+  padding: 5px 30px;
+}
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<section>
+<% @user_page %>
+<h4><%= @user_page.name %></h4>
+<h4><%= @user_page.email %></h4>
+
+<% if @posts %>
+<ul>
+<% @posts.each do |post| %>
+<li><%= post.title %></li>
+<li><%= post.content %></li>
+<% end %>
+</ul>
+<% end %>
+
+<% if @comments %>
+<ul>
+<% @comments.each do |comment| %>
+<li><%= comment.title %></li>
+<li><%= comment.content %></li>
+<% end %>
+</ul>
+<% end %>
+
+</section>
