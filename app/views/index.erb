@@ -2,13 +2,54 @@
   <ol>
     <% @matched.each do |match|%>
     <ul>
-      <li><h2><a href="/user/<%= match[0].id%>"><%= match[0].name.capitalize %></a><h2></li><hr>
-      <a href="/post/<%=match[2]%>"><li><%= match[1].capitalize %></li></a>
+      <li>
+        <h3>
+          <a href="/user/<%= match[0].id%>"><%= match[0].name.capitalize %></a>
+        </h3>
+
+        <hr>
+
+        <h2>
+        <a href="/post/<%=match[2]%>">
+          <li><%= match[1].capitalize %></li>
+        </a>
+        </h2>
+
+        <div class="votes">
+
+          <a href="" id="postup" data-post-id="<%=match[2] %>">
+            <h4>+</h4>
+          </a>
+            <h5> <%= match[5] %></h5>
+          <a id="postdown" data-post-id="<%=match[2] %>" href="">
+            <h4>-</h4>
+          </a>
+
+        </div>
+
+      </li>
       <hr>
-      <li><p>Comments: <%= match[4].content %>...</p></li><hr>
-      <li><a href="/"><h6>Total Comments: <%= match[3].count %></h6></a></li>
+
+      <li>
+        <p>Comments: <%= match[4].content %>...</p>
+        <div class="comment_votes">
+          <a id="commentup" data-comment-id="<%=match[3].id %>" href="<%=match[3].id %>">
+            <h5>+</h5>
+          </a>
+
+            <h6> <%= match[6] %></h6>
+
+            <a id="commentdown" data-comment-id="<%=match[3].id %>" href="<%=match[3].id %>">
+            <h5>-</h5>
+          </a>
+        </div>
+      </li>
+
+      <hr>
+
     </ul>
     <%end%>
+
   </ol>
 </section>
 

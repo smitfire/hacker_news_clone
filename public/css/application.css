@@ -56,7 +56,7 @@ hr{
   margin: 40px auto;
   text-align: left;
 }
-.container > section.home h2 {
+.container > section.home > ol > ul > li > h2 {
   font-weight: 100;
   display: inline;
 }
@@ -75,14 +75,6 @@ hr{
   width:auto;
   margin: 5px auto;
 }
-
-
-
-.container > section.home > ol > ul > a > li{
-  display: inline-block;
-  padding: 10px 60px;
-}
-
 
 .container > section.post > p,
 .container > section.home >ol > ul > li > p{
@@ -106,6 +98,79 @@ hr{
   padding: 10px 60px;
 }
 
+.container > section.home > a > h4 {
+  float:left;
+}
+
+a{
+  text-decoration: none;
+}
+
+section.home > ol > ul > li > div.votes{
+  color:rgba(20,100,200,1);
+  float: right;
+  padding-top: 3px;
+  width: 40%;
+}
+section.home > ol > ul > li > p{
+  float:left;
+  padding:10px;
+  font-style: italic;
+  font-weight: 100;
+}
+section.home > ol > ul > li > div.comment_votes{
+  float: right;
+ padding-top:8px;
+  /*width: 100%;*/
+}
+section.home > ol > ul > li > div.comment_votes > h6,
+section.home > ol > ul > li > div.comment_votes > a > h5{
+  padding: 9px 10px 0;
+  font-size: 17px;
+  float:right;
+  background: rgba(220,220,220,0.5);
+  color: rgba(20,100,200,0.5);
+  width:50px;
+  height:30px;
+  text-align: center;
+  font-weight: 100;
+}
+
+section.home > ol > ul > li > div.votes > h5,
+/*section.home > ol > ul > li > div.votes > a,*/
+section.home > ol > ul > li > div.votes > a > h4{
+  font-size: 17px;
+  color: white;
+  width:50px;
+  height:30px;
+  float:right;
+  padding: 9px 10px 0;
+  text-align: center;
+  background:rgba(20,100,200,0.5);
+  font-weight: 100;
+}
+
+section.home > ol > ul > li > h3{
+  width: 100%;
+  padding:3px;
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  background:rgba(20,100,200,0.8);
+}
+
+
+section.home > ol > ul > li > h3 > a{
+  text-align: center;
+  color: white;
+}
+
+section.home > ol > ul > li > h2 > a{
+  background: rgba(220,220,220,0.5);
+  color: rgba(20,100,200,0.8);
+  font-size: 16px;
+}
+
 .container > section.post h5,
 .container > section.post h3,
 .container > section.home > ol > ul > li > a,
@@ -113,6 +178,7 @@ hr{
   color: rgba(20,100,200,0.6);
   background: rgba(220,220,220,0.7);
 }
+
 .container > section.home > ol > ul > a:hover > li{
 
 }

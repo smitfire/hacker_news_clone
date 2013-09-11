@@ -3,9 +3,9 @@ enable 'sessions'
 get '/' do
   @posts = Post.all
   @matched = []
-
   @posts.each do |post|
-    @matched << [User.where(id: post.user_id).first,  post.title, post.id, Comment.where(post_id: post.id), Comment.find_by_post_id(post.id)]
+    comment = Comment.where(post_id: post.id)
+  @matched << [User.where(id: post.user_id).first, post.title, post.id, Comment.where(post_id: post.id).first, comment.first, post.rating, comment.first.rating]
   end
 
   if session[:user_id]
@@ -69,6 +69,8 @@ get '/post/new' do
   erb :new_post
 end
 
+
+
 post '/post/create' do
   @user = User.find_by_id(session[:user_id])
   Post.create(user_id: session[:user_id], title: params[:post][:title], content: params[:post][:content])
@@ -88,5 +90,62 @@ post '/new' do
   session[:user_id] = @user.id
   redirect("/user/#{@user.id}")
 end
+
+post '/postup/:post_id' do
+  post= Post.find(params[:post_id])
+  user = User.find(post.user.id)
+  Postvote.create(user_id: post.user.id, post_id: params[:post_id], up: 1)
+  rating = 0
+  post.postvotes.each do |postvote|
+    rating += postvote.up.to_i
+    rating -= postvote.down.to_i
+  end
+  # {rating: rating }.to_json
+  return rating.to_s
+end
+
+post '/postdown/:post_id' do
+  post= Post.find(params[:post_id])
+  user = User.find(post.user.id)
+  Postvote.create(user_id: post.user.id, post_id: params[:post_id], down: 1)
+  rating = 0
+  post.postvotes.each do |postvote|
+    rating += postvote.up.to_i
+    rating -= postvote.down.to_i
+  end
+  return rating.to_s
+end
+
+post '/commentup/:comment_id' do
+  comment= Comment.find(params[:comment_id])
+  user = User.find(comment.user.id)
+  Commentvote.create(user_id: comment.user.id, comment_id: params[:comment_id], up: 1)
+  rating = 0
+  comment.commentvotes.each do |commentvote|
+    rating += commentvote.up.to_i
+    rating -= commentvote.down.to_i
+  end
+  # {rating: rating }.to_json
+  return rating.to_s
+end
+
+post '/commentdown/:comment_id' do
+  comment= Comment.find(params[:comment_id])
+  user = User.find(comment.user.id)
+  Commentvote.create(user_id: comment.user.id, comment_id: params[:comment_id], down: 1)
+  rating = 0
+  comment.commentvotes.each do |commentvote|
+    rating += commentvote.up.to_i
+    rating -= commentvote.down.to_i
+  end
+  return rating.to_s
+end
+
+
+
+
+
+
+
 
 
